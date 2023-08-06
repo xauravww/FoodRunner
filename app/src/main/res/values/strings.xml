@@ -11,7 +11,6 @@
     <string name="shared_preferences">Shared Preferences</string>
 
 
-
     <string name="title_activity_registration">RegistrationActivity</string>
     <string name="title_activity_forgot_password">ForgotPasswordActivity</string>
     <string name="enter_your_registered_mobile_number_and_email_below">Enter your registered mobile number and email below:</string>
@@ -30,7 +29,9 @@
     <string name="email">Email</string>
     <string name="mobile">Mobile</string>
     <string name="DashboardText">Any Text Here .. </string>
-    
+
     <string name="open_drawer">Open Drawer</string>
     <string name="close_drawer" tools:ignore="PrivateResource">Close Drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -5,13 +5,20 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import android.widget.FrameLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.FragmentManager
+import com.example.foodrunner.fragment.FavouriteFragment
+import com.example.foodrunner.fragment.HomeFragment
+import com.example.foodrunner.fragment.ProfileFragment
+import com.example.foodrunner.fragment.QuestionFragment
 import com.google.android.material.navigation.NavigationView
 
 class DashboardActivity : AppCompatActivity() {
@@ -22,6 +29,8 @@ class DashboardActivity : AppCompatActivity() {
     lateinit var toolbar: Toolbar
     lateinit var frameLayout: FrameLayout
     lateinit var navigationView: NavigationView
+
+    var prevMenuItem: MenuItem? = null
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +56,55 @@ class DashboardActivity : AppCompatActivity() {
         )
         drawerLayout.addDrawerListener(actionBarDrawertoggle)
         actionBarDrawertoggle.syncState()
+
+
+        navigationView.setNavigationItemSelectedListener {
+            if (prevMenuItem != null) {
+                prevMenuItem?.isChecked = false
+            }
+            it.isCheckable = true
+            it.isChecked = true
+            prevMenuItem = it
+
+            when (it.itemId) {
+                R.id.home -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.frameLayout, HomeFragment())
+
+                        .commit()
+                    txtDashboard.visibility = View.GONE
+                }
+                R.id.myProfile -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.frameLayout, ProfileFragment())
+
+                        .commit()
+                    txtDashboard.visibility = View.GONE
+                }
+                R.id.favRestaurant -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.frameLayout, FavouriteFragment())
+
+                        .commit()
+                    txtDashboard.visibility = View.GONE
+                }
+                R.id.faqs -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.frameLayout, QuestionFragment())
+
+                        .commit()
+                    txtDashboard.visibility = View.GONE
+                }
+                R.id.logOut -> {
+                    Toast.makeText(this@DashboardActivity,"Add Logout feature",Toast.LENGTH_SHORT).show()
+                    txtDashboard.visibility = View.GONE
+                }
+
+            }
+
+
+            return@setNavigationItemSelectedListener true
+        }
 
         if (intent != null) {
             val details = intent.getBundleExtra("details")
