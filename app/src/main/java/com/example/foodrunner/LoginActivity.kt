@@ -31,25 +31,27 @@ class LoginActivity : ComponentActivity() {
         sharedPreferences = getSharedPreferences(getString(R.string.shared_preferences),
             MODE_PRIVATE)
 
-        var isLoggedIn = sharedPreferences.getBoolean("isLoggedIn",false)
+        val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn",false)
 
         if(isLoggedIn){
-            val intent = Intent(this@LoginActivity,WelcomeActivity::class.java)
+            val intent = Intent(this@LoginActivity,DashboardActivity::class.java)
             startActivity(intent)
             finish()
         }
 
         btnLogin.setOnClickListener{
-            var mobile = edtMobile.text.toString()
-            var password = edtPass.text.toString()
+            val mobile = edtMobile.text.toString()
+            val password = edtPass.text.toString()
             if(mobile.isNotEmpty() &&password.isNotEmpty() &&mobile.length==10){
-                mobile = edtMobile.text.toString()
-                password = edtPass.text.toString()
 
-                val intent = Intent(this@LoginActivity,WelcomeActivity::class.java)
+                val intent = Intent(this@LoginActivity,DashboardActivity::class.java)
+                val bundle = Bundle()
+                bundle.putString("data","login")
+                bundle.putString("mobile",mobile)
+                bundle.putString("password",password)
+                savePreferences(mobile, password)
 
-                savePreferences(mobile!!, password!!)
-
+                intent.putExtra("details",bundle)
 
                 startActivity(intent)
                 finish()

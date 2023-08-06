@@ -7,16 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.foodrunner.databinding.ActivityRegistrationBinding
-import java.util.regex.Pattern
-
 class RegistrationActivity : AppCompatActivity() {
     lateinit var imgArrow:ImageView
     lateinit var edtName:EditText
@@ -66,12 +57,15 @@ class RegistrationActivity : AppCompatActivity() {
             }
             if (isEmailValid&& name.isNotEmpty() && email.isNotEmpty() && mobile.isNotEmpty() && delivery.isNotEmpty() && pass.isNotEmpty() && confirmpass.isNotEmpty() && pass==confirmpass && mobile.length==10){
 
-                val intent = Intent(this@RegistrationActivity,ShowRegistrationDetailsActivity::class.java)
-                intent.putExtra("name",name)
-                intent.putExtra("email",email)
-                intent.putExtra("mobile",mobile)
-                intent.putExtra("delivery",delivery)
-                intent.putExtra("pass",confirmpass)
+                val intent = Intent(this@RegistrationActivity,DashboardActivity::class.java)
+                val bundle = Bundle()
+                bundle.putString("data","register")
+                bundle.putString("name",name)
+                bundle.putString("email",email)
+                bundle.putString("mobile",mobile)
+                bundle.putString("delivery",delivery)
+                bundle.putString("pass",confirmpass)
+                intent.putExtra("details",bundle)
                 startActivity(intent)
                 finish()
             }

@@ -6,14 +6,7 @@ import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.foodrunner.databinding.ActivityForgotPasswordBinding
 
 class ForgotPasswordActivity : AppCompatActivity() {
     lateinit var edtMobile:EditText
@@ -40,9 +33,12 @@ class ForgotPasswordActivity : AppCompatActivity() {
             }
 
             if(isEmailValid&& mobile.isNotEmpty() && email.isNotEmpty() && mobile.length==10){
-                val intent = Intent(this@ForgotPasswordActivity,ShowForgotDetailsActivity::class.java)
-                intent.putExtra("mobile",mobile)
-                intent.putExtra("email",email)
+                val intent = Intent(this@ForgotPasswordActivity,DashboardActivity::class.java)
+                val bundle = Bundle()
+                bundle.putString("data","forgot")
+                bundle.putString("mobile",mobile)
+                bundle.putString("email",email)
+                intent.putExtra("details",bundle)
                 startActivity(intent)
             }
         }
