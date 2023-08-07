@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.FoodRunner" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.FoodRunner" parent="Base.Theme.FoodRunner"
+        />
     <!-- Base application theme. -->
     <style name="Base.Theme.FoodRunner" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">#EE6C00</item>
+        <item name="colorPrimaryDark">#C23E10</item>
+        <item name="colorAccent">#D81B60</item>
     </style>
+
 </resources>

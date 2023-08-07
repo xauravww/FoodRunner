@@ -18,7 +18,7 @@ class FavouriteFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-      val view = inflater.inflate(R.layout.fragment_favourite, container, false)
+        val view = inflater.inflate(R.layout.fragment_favourite, container, false)
         return view
     }
 

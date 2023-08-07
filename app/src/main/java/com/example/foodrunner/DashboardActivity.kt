@@ -47,7 +47,7 @@ class DashboardActivity : AppCompatActivity() {
         frameLayout = findViewById(R.id.frameLayout)
         navigationView = findViewById(R.id.navigationView)
         setUpToolbar()
-
+        openHome()
         val actionBarDrawertoggle = ActionBarDrawerToggle(
             this@DashboardActivity,
             drawerLayout,
@@ -68,35 +68,41 @@ class DashboardActivity : AppCompatActivity() {
 
             when (it.itemId) {
                 R.id.home -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.frameLayout, HomeFragment())
-
-                        .commit()
-                    txtDashboard.visibility = View.GONE
+                    openHome()
                 }
+
                 R.id.myProfile -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frameLayout, ProfileFragment())
-
                         .commit()
+                    drawerLayout.closeDrawers()
+                    supportActionBar?.title= "Profile"
                     txtDashboard.visibility = View.GONE
                 }
+
                 R.id.favRestaurant -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frameLayout, FavouriteFragment())
 
                         .commit()
+                    drawerLayout.closeDrawers()
+                    supportActionBar?.title= "Favourites"
                     txtDashboard.visibility = View.GONE
                 }
+
                 R.id.faqs -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frameLayout, QuestionFragment())
 
                         .commit()
+                    drawerLayout.closeDrawers()
+                    supportActionBar?.title= "FAQs"
                     txtDashboard.visibility = View.GONE
                 }
+
                 R.id.logOut -> {
-                    Toast.makeText(this@DashboardActivity,"Add Logout feature",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@DashboardActivity, "Add Logout feature", Toast.LENGTH_SHORT)
+                        .show()
                     txtDashboard.visibility = View.GONE
                 }
 
@@ -166,5 +172,16 @@ class DashboardActivity : AppCompatActivity() {
             drawerLayout.openDrawer(GravityCompat.START)
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun openHome() {
+        val transaction = supportFragmentManager.beginTransaction()
+        val fragment = HomeFragment()
+        transaction.replace(R.id.frameLayout, fragment)
+        transaction.commit()
+        drawerLayout.closeDrawers()
+        supportActionBar?.title = "Dashboard"
+        navigationView.setCheckedItem(R.id.home)
+        txtDashboard.visibility = View.GONE
     }
 }
