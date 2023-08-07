@@ -1,14 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.QuestionFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="18dp"
+        android:text="Q-1 Will this app be free for everyone?"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="FAQs Fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text="A.1 Yeah, it will be absouletely free"
+        android:textSize="18sp"
 
-</FrameLayout>
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/black"
+        android:layout_marginVertical="18dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Q-2 What type of data does this app collects?"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginVertical="18dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text="A.2 We don't collect any unnecessary data"
+        android:textSize="18sp"
+
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/black"
+        android:layout_marginVertical="18dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Q-3 Can we order food in the midnight?"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginVertical="18dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text="A.3 Sorry this service is not currently available but we will soon add this to our app"
+        android:textSize="18sp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/black"
+        android:layout_marginVertical="18dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Q-4 Can i get free discounts on this app?"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginVertical="18dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text="A.4 No , this app is a project or prototype of food ordering but we currently we don't offer any such services "
+        android:textSize="18sp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/black"
+        android:layout_marginVertical="18dp"
+        />
+
+
+</LinearLayout>

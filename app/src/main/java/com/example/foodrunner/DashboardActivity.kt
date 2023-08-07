@@ -184,4 +184,15 @@ class DashboardActivity : AppCompatActivity() {
         navigationView.setCheckedItem(R.id.home)
         txtDashboard.visibility = View.GONE
     }
+
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        val frag = supportFragmentManager.findFragmentById(R.id.frameLayout)
+        when(frag){
+            !is HomeFragment -> openHome()
+            else -> super.onBackPressed()
+        }
+
+    }
+
 }

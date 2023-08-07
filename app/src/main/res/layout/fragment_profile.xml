@@ -1,14 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.ProfileFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    tools:context=".fragment.ProfileFragment"
 
-    <!-- TODO: Update blank fragment layout -->
+    >
+<com.google.android.material.imageview.ShapeableImageView
+    android:id="@+id/imgUser"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:src="@drawable/ic_user"
+    android:background="@color/white"
+app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+    android:padding="10dp"
+android:layout_centerHorizontal="true"
+    android:layout_marginTop="30dp"
+    />
+
     <TextView
+        android:id="@+id/txtName"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Profile Fragment" />
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:background="#ffffff"
+        android:layout_marginHorizontal="30dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:padding="10dp"
+        android:layout_below="@+id/imgUser"
+        />
 
-</FrameLayout>
+    <TextView
+android:id="@+id/txtMobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mobile"
+        android:layout_below="@+id/txtName"
+        android:background="#ffffff"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:padding="10dp"
+        />
+
+    <TextView
+        android:id="@+id/txtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:layout_below="@+id/txtMobile"
+        android:background="#ffffff"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:padding="10dp"
+        />
+
+    <TextView
+        android:id="@+id/txtDelivery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delivery"
+        android:layout_below="@+id/txtEmail"
+        android:background="#ffffff"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:padding="10dp"
+        />
+
+</RelativeLayout>
